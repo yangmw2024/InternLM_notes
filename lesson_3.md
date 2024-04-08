@@ -201,3 +201,6 @@ python3 -m huixiangdou.main --standalone
 
 ```
 RAG 技术的优势就是非参数化的模型调优，这里使用的仍然是基础模型 `InternLM2-Chat-7B`， 没有任何额外数据的训练。面对同样的问题，我们的**茴香豆技术助理**能够根据我们提供的数据库生成准确的答案：
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson3_1.png) 
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson3_2.png) 
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson3_3.png) 
