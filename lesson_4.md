@@ -3,7 +3,7 @@
 
 | 微调前   | 微调后          |
 | -------- | --------------- |
-| ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/internlm2.png) |![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/internlm2.png) |
+| ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_2.png) |![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_1.png) |
 
 
 ## 1 开发机准备
