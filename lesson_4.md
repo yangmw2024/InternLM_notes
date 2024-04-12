@@ -891,7 +891,7 @@ xtuner chat /root/ft/final_model --prompt-template internlm2_chat
 
 ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_2_1.png)
 
-可以看到模型已经严重过拟合，回复的话就只有 “我是剑锋大佬的小助手，内在是上海AI实验室书生·浦语的1.8B大模型哦” 这句话。我们下面可以通过对比原模型的能力来看看差异。
+可以看到模型已经严重过拟合，回复的话就只有 “我是XXX的小助手，内在是上海AI实验室书生·浦语的1.8B大模型哦” 这句话。我们下面可以通过对比原模型的能力来看看差异。
 
 ```bash
 # 同样的我们也可以和原模型进行对话进行对比
