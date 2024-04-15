@@ -1295,3 +1295,8 @@ streamlit run /root/ft/web_demo/InternLM/chat/web_demo.py --server.address 127.0
 在本节中主要就是带领着大家跑通了 XTuner 的一个完整流程，通过了解数据集和模型的使用方法、配置文件的制作和训练以及最后的转换及整合。那在后面假如我们也有想要微调出自己的一个模型，我们也可以尝试使用同样流程和方法进行进一步的实践！
 
 
+# XTuner多模态训练与测试
+
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_4_1.png)
+
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_4_2.png)
