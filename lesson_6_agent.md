@@ -27,9 +27,10 @@ streamlit run internlm2_agent_web_demo.py --server.address 127.0.0.1 --server.po
 ```bash
 ssh -CNg -L 7860:127.0.0.1:7860 -L 23333:127.0.0.1:23333 root@ssh.intern-ai.org.cn -p 你的 ssh 端口号
 ```
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_lagent_3.png) 
 
 接下来在本地的浏览器页面中打开 http://localhost:7860 以使用 Lagent Web Demo。
-
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_lagent_arxiv.png) 
 
 ## 2. 用 Lagent 自定义工具
 
@@ -175,7 +176,7 @@ streamlit run internlm2_weather_web_demo.py --server.address 127.0.0.1 --server.
 ```bash
 ssh -CNg -L 7860:127.0.0.1:7860 -L 23333:127.0.0.1:23333 root@ssh.intern-ai.org.cn -p 你的 ssh 端口号
 ```
-
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_lagent_weather.png) 
 
 
 # AgentLego：组装智能体“乐高”
@@ -273,7 +274,8 @@ bicycle (968, 551, 996, 609), score 53
 bus (826, 482, 930, 560), score 52
 bicycle (1011, 551, 1043, 617), score 51
 ```
-
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_agentlego_bash.png) 
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_agentlego_picture.png) 
 
 ## 2 作为智能体工具使用
 
@@ -327,6 +329,7 @@ ssh -CNg -L 7860:127.0.0.1:7860 -L 23333:127.0.0.1:23333 root@ssh.intern-ai.org.
 ### 2.4 使用 AgentLego WebUI
 
 接下来在本地的浏览器页面中打开 http://localhost:7860 以使用 AgentLego WebUI。配置 Agent 和 Tools。
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_agentlego_web.png) 
 
 ## 3. 用 AgentLego 自定义工具
 
@@ -477,7 +480,7 @@ ssh -CNg -L 7860:127.0.0.1:7860 -L 23333:127.0.0.1:23333 root@ssh.intern-ai.org.
 
 在 Tool 界面选择 MagicMakerImageGeneration 后点击 save 后，回到 Chat 页面选择 MagicMakerImageGeneration 工具后就可以开始使用了。为了确保调用工具的成功率，请在使用时确保仅有这一个工具启用。下图是一个例子。可以看到模型成功地调用了工具并得到了结果。
 
-
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson6_agentlego_generate.png) 
 
 
 
