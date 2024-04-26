@@ -1,40 +1,15 @@
  # XTuner 微调个人小助手认知
 
 
-| 微调前   | 微调后          |
-| -------- | --------------- |
-| ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_2.png) |![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_1.png) |
-
-
-## 1 开发机准备
-
-`Cuda11.7-conda` ， `10% A100 * 1` 
-
-## 2 快速上手
+微调前 ：
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_2.png) 
+微调后：
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_1.png) 
 
 XTuner 的运行原理：
 
 ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_0_1.png)
 
-
-### 2.1 环境安装
-
-```bash
-conda create --name xtuner0.1.17 python=3.10 -y
-
-conda activate xtuner0.1.17
-cd ~
-
-mkdir -p /root/xtuner0117 && cd /root/xtuner0117
-git clone -b v0.1.17  https://github.com/InternLM/xtuner
-
-cd /root/xtuner0117/xtuner
-pip install -e '.[all]'
-```
-
-### 2.2 前期准备
-
-#### 2.2.1 数据集准备
 
 ```bash
 mkdir -p /root/ft && cd /root/ft
@@ -43,7 +18,7 @@ mkdir -p /root/ft && cd /root/ft
 mkdir -p /root/ft/data && cd /root/ft/data
 ```
 
-之后我们可以在 `data` 目录下新建一个 `generate_data.py` 文件，将以下代码复制进去，然后运行该脚本即可生成数据集。
+在 `data` 目录下新建一个 `generate_data.py` 文件，将以下代码复制进去，然后运行该脚本生成数据集。
 
 ```bash
 # 创建 `generate_data.py` 文件
@@ -101,14 +76,6 @@ python /root/ft/data/generate_data.py
 可以看到在data的路径下便生成了一个名为 `personal_assistant.json` 的文件，是微调的数据集，里面包含5000 条 `input` 和 `output` 的数据对。
 
 
-
-
-#### 2.2.2 模型准备
-
- `InterLM-chat-1.8B` 
-
-
-#### 2.2.3 配置文件选择
 ```
 # 列出所有内置配置文件
 # xtuner list-cfg
@@ -122,8 +89,6 @@ mkdir -p /root/ft/config
 # 使用 XTuner 中的 copy-cfg 功能将 config 文件复制到指定的位置
 xtuner copy-cfg internlm2_1_8b_qlora_alpaca_e3 /root/ft/config
 ```
-
-### 2.3 配置文件修改
 
 ```diff
 # 修改模型地址（在第27行的位置）
@@ -213,7 +178,7 @@ xtuner convert pth_to_hf /root/ft/train/internlm2_1_8b_qlora_alpaca_e3_copy.py /
 
 而对于全量微调的模型（full）其实是不需要进行整合这一步的，因为全量微调修改的是原模型的权重而非微调一个新的 adapter ，因此是不需要进行模型整合的。
 
-在 XTuner 中也是提供了一键整合的指令，但是在使用前我们需要准备好三个地址，包括原模型的地址、训练好的 adapter 层的地址（转为 Huggingface 格式后保存的部分）以及最终保存的地址。
+ XTuner 中提供一键整合的指令
 ```bash
 # 创建一个名为 final_model 的文件夹存储整合后的模型文件
 mkdir -p /root/ft/final_model
@@ -236,17 +201,16 @@ xtuner chat /root/ft/final_model --prompt-template internlm2_chat
 
 ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_2_1.png)
 
-可以看到模型已经严重过拟合，回复的话就只有 “我是XXX的小助手，内在是上海AI实验室书生·浦语的1.8B大模型哦” 这句话。我们下面可以通过对比原模型的能力来看看差异。
+可以看到模型已经严重过拟合
 
 ```bash
-# 同样的我们也可以和原模型进行对话进行对比
+#和原模型进行对话进行对比
 xtuner chat /root/ft/model --prompt-template internlm2_chat
 ```
-我们可以用同样的问题来查看回复的情况。
+用同样的问题来查看回复的情况。
 
 ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_2_2.png)
 
-可以看到在没有进行我们数据的微调前，原模型是能够输出有逻辑的回复，并且也不会认为他是我们特有的小助手。因此我们可以很明显的看出两者之间的差异性。
 
 
 
@@ -267,7 +231,7 @@ cd /root/ft/web_demo/InternLM
 
 ![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_1.png)
 
-假如我们还想和原来的 InternLM2-Chat-1.8B 模型对话（即在 `/root/ft/model` 这里的模型对话）
+和原来的 InternLM2-Chat-1.8B 模型对话（即在 `/root/ft/model` 这里的模型对话）
 
 ```diff
 # 修改模型地址（第183行）
