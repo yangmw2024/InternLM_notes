@@ -1,10 +1,10 @@
  # XTuner 微调个人小助手认知
 
 
-微调前 ：
-![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_2.png) 
-微调后：
-![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson5_3_1.png) 
+指令微调 ：
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson4_add2.png) 
+qlora：
+![image](https://github.com/yangmw2024/InternLM_notes/blob/main/IMG/lesson4_add1.png) 
 
 XTuner 的运行原理：
 
